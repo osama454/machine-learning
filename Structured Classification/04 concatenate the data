@@ -1,0 +1,6 @@
+<TotData>=pd.concat([<Merge>],ignore_index=True)
+<TotData>=<TotData>.replace(r'^\s*$', np.nan, regex=True)
+del <Merge>
+<***>
+TotData=Data
+Merge=data1,data2

@@ -1,0 +1,20 @@
+#%%feature selection
+k=<k>
+SP=SelectKBest(score_func=<score_func>,k=k)
+SP.fit(<x_train>,<y_train>)
+
+f=SP.get_support() # get the remaining columns from feature selection
+columns=<x_train>.columns[f]
+print(len(columns))#k
+
+<x_train>=pd.DataFrame(SP.transform(<x_train>),columns=columns)
+<x_test>=pd.DataFrame(SP.transform(<x_test>),columns=columns)
+
+<x_train> = <x_train>.reindex(sorted(<x_train>.columns), axis=1)
+<x_test> = <x_test>.reindex(sorted(<x_test>.columns), axis=1)
+<***>
+x_train=x_train
+x_test=x_test
+y_train=y_train
+k=47
+score_func={chi2,f_classif}:0

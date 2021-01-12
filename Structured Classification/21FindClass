@@ -1,0 +1,8 @@
+def Find_Class(Prob,Classes):
+  maxIndx=0
+  maxVal=0
+  for i,j in enumerate(Prob):
+    if j>maxVal:
+      maxVal=j
+      maxIndx=i
+  return Classes[maxIndx]

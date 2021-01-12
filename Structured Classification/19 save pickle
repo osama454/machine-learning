@@ -1,0 +1,6 @@
+pickle_out = open(r"<path>","wb")
+pickle.dump(<object>, pickle_out)
+pickle_out.close()
+<***>
+object
+path=E:\ .h5

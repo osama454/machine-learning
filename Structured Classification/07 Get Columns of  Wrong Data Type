@@ -1,0 +1,10 @@
+<StrList>=[j for i,j,k in zip(<Data.dtypes>,<features>,<OriginalDtypes>)
+if (i==(<DT>))and(k==(<ODT>))]
+print(<StrList>)
+<***>
+StrList=StrList
+Data.dtypes=Data.dtypes
+DT='object'
+OriginalDtypes=features.iloc[:,2]
+ODT='integer'or 'Float'
+features=features.iloc[:,1]

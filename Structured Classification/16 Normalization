@@ -1,0 +1,18 @@
+print(
+<x_train>.agg(['max','min','std','mean']),'\n', 
+<x_test>.agg(['max','min','std','mean']) 
+)
+#%%
+SS=StandardScaler(copy=True, with_mean=True, with_std=True)
+SS.fit(<x_train>)
+
+<x_train>=pd.DataFrame(SS.transform(<x_train>),columns=columns)
+<x_test>=pd.DataFrame(SS.transform(<x_test>),columns=columns)
+#%%
+print(
+<x_train>.agg(['max','min','std','mean']),'\n', 
+<x_test>.agg(['max','min','std','mean']) 
+)
+<***>
+x_train=x_train
+x_test=x_test

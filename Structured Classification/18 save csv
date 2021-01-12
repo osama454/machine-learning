@@ -1,0 +1,3 @@
+<data>.to_csv(r'path',index=False)
+<***>
+data=Data

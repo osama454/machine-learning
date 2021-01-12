@@ -1,0 +1,5 @@
+<Data>[<StrList>]=<Data>[<StrList>].replace('<replace>',np.nan,regex=True)
+<***>
+Data=Data
+StrList=StrList
+replace=-

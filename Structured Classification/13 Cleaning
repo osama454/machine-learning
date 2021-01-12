@@ -1,0 +1,24 @@
+print(<x_train>.isnull().sum().sort_values(ascending=False,inplace=False).head(8))
+print(100*'=')
+#%%
+NanColsNames=x_train.columns[x_train.isnull().any()]
+num=<x_train>[NanColsNames]._get_numeric_data().columns #numeric data columns names
+cat=<x_train>[NanColsNames].select_dtypes(include=['object']).columns#categorical data columns names
+print(len(num),'\n',len(cat))
+#%%
+SIn=SimpleImputer(missing_values=np.nan, strategy='mean')#replace nan values with the colum mean
+SIn.fit(<x_train>[num])
+<x_train>[num]=pd.DataFrame(SIn.transform(<x_train>[num]),columns=num) #transform
+<x_test>[num]=pd.DataFrame(SIn.transform(<x_test>[num]),columns=num)
+#%%
+SIc=SimpleImputer(missing_values=np.nan, strategy='most_frequent')#replace nan values with the colum mean
+SIc.fit(<x_train>[num])
+<x_train>[num]=pd.DataFrame(SIc.transform(<x_train>[num]),columns=num) 
+<x_test>[num]=pd.DataFrame(SIc.transform(<x_test>[num]),columns=num)
+#%%
+print(<x_train>.isnull().sum().sort_values(ascending=False,inplace=False).head())
+print(100*'=')
+print(<x_test>.isnull().sum().sort_values(ascending=False,inplace=False).head())
+<***>
+x_train=x_train
+x_test=x_test

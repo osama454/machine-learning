@@ -1,0 +1,7 @@
+<StrDict>={col:[[i,j] for i,j in enumerate(<Data>[col]) if type(j)==str] for col in <StrList>}
+for col in <StrDict>:
+  print(len(<StrDict>[col]))
+<***>
+StrDict=StrDict
+Data=Data
+StrList=StrList

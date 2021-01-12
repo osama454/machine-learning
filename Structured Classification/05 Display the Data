@@ -1,0 +1,10 @@
+#%%Display The Data
+print(<data>.shape)
+print(100*"=")
+print(<data>.head())
+print(100*"=")
+print(<data>.dtypes)
+print(100*"=")
+print(<data>.isnull().sum().sort_values(ascending=False,inplace=False))
+<***>
+data=Data

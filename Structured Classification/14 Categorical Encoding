@@ -1,0 +1,23 @@
+<x_train>=pd.get_dummies(<x_train>)
+<x_test>=pd.get_dummies(<x_test>)
+missed_features=set(<x_train>.columns)-set(<x_test>.columns)
+
+for i in missed_features:
+    <x_test>[i]=0
+
+missed_features=set(<x_test>.columns)-set(<x_train>.columns)
+
+for i in missed_features:
+    <x_test>=x_test.drop(i,axis=1)    
+
+num=<x_train>._get_numeric_data().columns #numeric data columns names
+cat=<x_train>.select_dtypes(include=['object']).columns#categorical data columns names
+
+<x_train>=<x_train>.reindex(sorted(<x_train>.columns), axis=1)#sort the data again 
+<x_test> = <x_test>.reindex(sorted(<x_test>.columns), axis=1)
+#%%
+print(<x_train>.shape)
+print(<x_test>.shape)
+<***>
+x_train=x_train
+x_test=x_test

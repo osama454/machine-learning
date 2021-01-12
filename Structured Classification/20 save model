@@ -1,0 +1,4 @@
+<model>.save(r'<path>')
+<***>
+model=model
+path=E:\ .h5

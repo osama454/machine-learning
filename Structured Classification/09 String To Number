@@ -1,0 +1,14 @@
+def StrToNum(a):      
+  try:
+    return int(a,0)
+  except:
+    try:
+      return float(a)
+    except:
+      return a
+
+for col in <StrList>:
+  <Data>[col]=<Data>[col].map(StrToNum)
+<***>
+Data=Data
+StrList=StrList
